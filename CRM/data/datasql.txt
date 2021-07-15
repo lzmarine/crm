@@ -1,0 +1,4 @@
+SELECT count(1) FROM customer_info WHERE MONTH(birth_day) = MONTH(NOW()) and DAY(birth_day) = DAY(NOW())
+SELECT count(1) FROM customer_info WHERE date_format( birth_day,'%m%d')  BETWEEN date_format( now( ) , '%m%d' ) AND date_format( date_add( now( ) , INTERVAL 7 DAY ) , '%m%d' )
+SELECT count(1) FROM customer_info WHERE date_format( birth_day,'%m%d')  BETWEEN date_format( now( ) , '%m%d' ) AND date_format( date_add( now( ) , INTERVAL 15 DAY ) , '%m%d' )
+SELECT count(1) FROM customer_info WHERE date_format( birth_day,'%m%d')  BETWEEN date_format( now( ) , '%m%d' ) AND date_format( date_add( now( ) , INTERVAL 30 DAY ) , '%m%d' )
